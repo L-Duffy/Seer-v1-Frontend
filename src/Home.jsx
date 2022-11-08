@@ -69,14 +69,20 @@ export function Home() {
 
   return (
     <div>
-      <Login />
-      <Signup />
-      <LogoutLink />
-      <ImagesNew onCreateImage={handleCreateImage} />
-      <ImagesIndex images={images} onSelectImage={handleShowImage} />
-      <Modal show={isImagesShowVisible} onClose={handleHideImage}>
-        <ImagesShow image={currentImage} onUpdateImage={handleUpdateImage} onDestroyPhoto={handleDestroyImage} />
-      </Modal>
+      {localStorage.jwt === undefined ? (
+        <div>
+          <Login />
+          <Signup />
+        </div>
+      ) : (
+        <div>
+          <ImagesNew onCreateImage={handleCreateImage} />
+          <ImagesIndex images={images} onSelectImage={handleShowImage} />
+          <Modal show={isImagesShowVisible} onClose={handleHideImage}>
+            <ImagesShow image={currentImage} onUpdateImage={handleUpdateImage} onDestroyPhoto={handleDestroyImage} />
+          </Modal>
+        </div>
+      )}
     </div>
   );
 }
