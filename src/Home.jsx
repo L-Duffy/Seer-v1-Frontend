@@ -6,7 +6,6 @@ import { ImagesNew } from "./ImagesNew";
 import { Modal } from "./Modal";
 import { Signup } from "./Signup";
 import { Login } from "./Login";
-import { LogoutLink } from "./LogoutLink";
 
 export function Home() {
   const [images, setImages] = useState([]);
