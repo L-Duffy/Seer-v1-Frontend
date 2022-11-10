@@ -4,7 +4,6 @@ export function ImagesNew(props) {
     const params = new FormData(event.target);
     props.onCreateImage(params);
     event.target.reset();
-    window.location.href = "/";
   };
 
   return (
