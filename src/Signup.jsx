@@ -34,7 +34,7 @@ export function Signup() {
             Signup
           </span>
           <div>
-            <label className="block text-gray-700 text-sm font-bold my-2" for="username">
+            <label className="block text-gray-700 text-sm font-bold my-2" for="name">
               Name
             </label>
             <input
@@ -44,7 +44,7 @@ export function Signup() {
             />
           </div>
           <div>
-            <label className="block text-gray-700 text-sm font-bold my-2" for="username">
+            <label className="block text-gray-700 text-sm font-bold my-2" for="email">
               Email
             </label>
             <input
@@ -54,7 +54,7 @@ export function Signup() {
             />
           </div>
           <div>
-            <label className="block text-gray-700 text-sm font-bold my-2" for="username">
+            <label className="block text-gray-700 text-sm font-bold my-2" for="password">
               Password
             </label>
             <input
@@ -64,7 +64,7 @@ export function Signup() {
             />
           </div>
           <div>
-            <label className="block text-gray-700 text-sm font-bold my-2" for="username">
+            <label className="block text-gray-700 text-sm font-bold my-2" for="password_confirmation">
               Confirm
             </label>
             <input
