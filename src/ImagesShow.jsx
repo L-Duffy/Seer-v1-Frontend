@@ -13,7 +13,9 @@ export function ImagesShow(props) {
     <div>
       <img src={props.image.image_url} />
       <div className="flex">
-        Tags:&nbsp;
+        <span className="block text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 mt-0.5">
+          Tags:&nbsp;
+        </span>
         {props.image.tags.map((tag) => (
           <p className="text-purple-600 font-semibold">{tag.name},&nbsp;</p>
         ))}
@@ -25,7 +27,7 @@ export function ImagesShow(props) {
               Name:
             </label>
             <input
-              className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mr-2"
               defaultValue={props.image.name}
               name="name"
               type="text"
