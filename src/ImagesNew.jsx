@@ -14,7 +14,10 @@ export function ImagesNew(props) {
           Name: <input name="name" type="text" />
         </div>
         <div>
-          Description: <input name="description" type="text" />
+          Tags: <input name="tags" type="text" />
+        </div>
+        <div>
+          Description: <textarea name="description" type="textarea" />
         </div>
         <div>
           Image: <input name="image_url" type="file" />

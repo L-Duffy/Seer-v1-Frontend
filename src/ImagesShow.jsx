@@ -24,7 +24,7 @@ export function ImagesShow(props) {
           Name: <input defaultValue={props.image.name} name="name" type="text" />
         </div>
         <div>
-          Description: <input defaultValue={props.image.description} name="width" type="text" />
+          Description: <textarea defaultValue={props.image.description} name="width" type="textarea" />
         </div>
         <button type="submit">Update Image</button>
       </form>

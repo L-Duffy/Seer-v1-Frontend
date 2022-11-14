@@ -4,12 +4,14 @@ import { ImagesIndex } from "./ImagesIndex";
 import { ImagesShow } from "./ImagesShow";
 import { ImagesNew } from "./ImagesNew";
 import { Modal } from "./Modal";
+import { Modal2 } from "./Modal2";
 import { Signup } from "./Signup";
 import { Login } from "./Login";
 
 export function Home() {
   const [images, setImages] = useState([]);
   const [isImagesShowVisible, setIsImagesShowVisible] = useState(false);
+  const [isImagesNewVisible, setIsImagesNewVisible] = useState(false);
   const [currentImage, setCurrentImage] = useState({});
 
   const handleIndexImages = () => {
@@ -31,12 +33,23 @@ export function Home() {
     setIsImagesShowVisible(false);
   };
 
+  const handleShowNew = () => {
+    console.log("handleShowNew");
+    setIsImagesNewVisible(true);
+  };
+
+  const handleHideNew = () => {
+    console.log("handleHideNew");
+    setIsImagesNewVisible(false);
+  };
+
   const handleCreateImage = (params, successCallback) => {
     console.log("handleCreateImage", params);
     axios.post("http://localhost:3000/images.json", params).then((response) => {
       setImages([...images, response.data]);
       successCallback();
     });
+    handleHideNew();
   };
 
   const handleUpdateImage = (id, params, successCallback) => {
@@ -75,11 +88,13 @@ export function Home() {
         </div>
       ) : (
         <div>
-          <ImagesNew onCreateImage={handleCreateImage} />
-          <ImagesIndex images={images} onSelectImage={handleShowImage} />
+          <ImagesIndex images={images} onSelectImage={handleShowImage} onSelectNew={handleShowNew} />
           <Modal show={isImagesShowVisible} onClose={handleHideImage}>
             <ImagesShow image={currentImage} onUpdateImage={handleUpdateImage} onDestroyPhoto={handleDestroyImage} />
           </Modal>
+          <Modal2 show={isImagesNewVisible} onClose={handleHideNew}>
+            <ImagesNew onCreateImage={handleCreateImage} />
+          </Modal2>
         </div>
       )}
     </div>
