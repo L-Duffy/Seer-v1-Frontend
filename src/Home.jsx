@@ -71,7 +71,8 @@ export function Home() {
 
   const handleDestroyImage = (image) => {
     console.log("Image", image);
-    axios.delete(`http://localhost:3000/images/${image.id}.json`).then((response) => {
+    axios.delete("http://localhost:3000/images/" + image.id + ".json").then((response) => {
+      console.log(response);
       setImages(images.filter((p) => p.id !== image.id));
       handleHideImage();
     });
@@ -90,7 +91,7 @@ export function Home() {
         <div>
           <ImagesIndex images={images} onSelectImage={handleShowImage} onSelectNew={handleShowNew} />
           <Modal show={isImagesShowVisible} onClose={handleHideImage}>
-            <ImagesShow image={currentImage} onUpdateImage={handleUpdateImage} onDestroyPhoto={handleDestroyImage} />
+            <ImagesShow image={currentImage} onUpdateImage={handleUpdateImage} onDestroyImage={handleDestroyImage} />
           </Modal>
           <Modal2 show={isImagesNewVisible} onClose={handleHideNew}>
             <ImagesNew onCreateImage={handleCreateImage} />

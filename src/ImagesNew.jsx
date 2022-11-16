@@ -9,10 +9,10 @@ export function ImagesNew(props) {
   return (
     <div>
       <form className="shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
-        <span className="py-2 font-semibold text-xl text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">
+        <span className="font-semibold text-xl text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">
           New Image
         </span>
-        <div className="mb-4">
+        <div className="mb-4 mt-2">
           <label className="block text-gray-300 font-semibold mb-2" for="name">
             Name
           </label>
@@ -51,6 +51,7 @@ export function ImagesNew(props) {
             aria-describedby="image_url_help"
             id="image_url"
             type="file"
+            name="image_url"
           />
           <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">
             SVG, PNG, JPG or GIF (MAX. nil x nil px).

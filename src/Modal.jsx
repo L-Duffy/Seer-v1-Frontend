@@ -6,7 +6,7 @@ export function Modal(props) {
       <div className="modal-background">
         <section className="group modal-main">
           {props.children}
-          <button className="invisible group-hover:visible close" type="button" onClick={props.onClose}>
+          <button className="invisible group-hover:visible close text-gray-900" type="button" onClick={props.onClose}>
             &#x2715;
           </button>
         </section>

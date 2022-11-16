@@ -49,7 +49,6 @@ export function ImagesIndex(props) {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-6 p-4">
           {filteredImages.map((image) => {
             const wideImage = (image) => {
-              console.log(image);
               if (image.width > image.height) {
                 return "rounded-lg col-span-2";
               } else {
