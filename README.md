@@ -16,7 +16,7 @@ npm install
 npm run dev
 ```
 
-You'll need to have the [backend code]() running on http://localhost:3000.
+You'll need to have the [backend code](https://github.com/L-Duffy/Seer-v1-Backend) running on http://localhost:3000.
 You can view the app on http://localhost:5173.
 
 ## Roadmap
